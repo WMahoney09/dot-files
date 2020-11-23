@@ -62,6 +62,12 @@ Plugin 'peitalin/vim-jsx-typescript'
 " color schemes
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'mhartington/oceanic-next'
+Plugin 'morhetz/gruvbox'
+Plugin 'joshdick/onedark.vim'
+Plugin 'ajh17/spacegray.vim'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'ghifarit53/tokyonight-vim'
+Plugin 'jsit/toast.vim'
 
 " markdown preview
 Plugin 'JamshedVesuna/vim-markdown-preview'
