@@ -2,23 +2,31 @@
 version controlled config for Vim, Zsh &amp; Tmux
 
 ## Usage
-- clone this repository in your home directory (`~`)
-- make the `backup_and_install.sh` script executable and run it
+ - clone this repo **with `--recurse-submodules` flag**
+   - [Vundle](https://github.com/VundleVim/Vundle.vim) is a submodule
+   - [OhMyZsh](https://github.com/ohmyzsh/ohmyzsh) is a submodule
+ - run the `backup_and_install.sh` script
+   - moves all of your existing dot files to `~/dotfiles_old/<timestamp>`
+   - symlinks dotfiles to `~`
+   - don't forget to `source` your new `~/.zshrc`
+ - open Vim, and run `:PluginInstall`
+   - vim may complain about certain things not being installed, this is expected.
+   - when Vundle completes the install, quit and restart vim.
+   - there should be no errors this time
+
 ```sh
+## clone and install
 $ cd ~
 
-$ chmod +x backup_and_install.sh
+$ git clone --recurse-submodules git@github.com:WMahoney09/dotfiles.git
 
-$ backup_and_install.sh
+$ bash dotfiles/backup_and_install.sh
+
+$ source ~/.zshrc
 ```
-   - This will create a back up of your existing dot files
-   - symlinks will be created in your `~` directory pointing to `~/dotfiles/`
-- From `~/dotfiles/` use `git fetch` to check for updates, and `git pull` to apply them
-   - You do not need to re-run the install script for changes to take effect.
-   - :warning: Re-running the install script will overrite your backups with "new backups"
 
 ### undoing this
-You can find your previous dot files in `~/dotfiles_old/`
-1. You'll want to `unlink` the relevant "dotfile(s)"
-1. Copy or move the back up of the relevant "dotfile(s)" from `~/dotfiles_old/` back to `~`
+You can find your previous dot files in `~/dotfiles_old/<timestamp>`
+1. You'll want to `unlink` the relevant "dotfile(s)" _or delete them_
+1. Copy or move the back up of the relevant "dotfile(s)" from `~/dotfiles_old/<timestamp>` back to `~`
 1. Enjoy the familiarity of your old config :relaxed:
