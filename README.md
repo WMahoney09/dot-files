@@ -25,6 +25,11 @@ $ bash dotfiles/backup_and_install.sh
 $ source ~/.zshrc
 ```
 
+#### Fonts
+You may want to use a patched font for everything to look right.
+
+I use [Dank Mono](https://gumroad.com/l/dank-mono).
+
 ### undoing this
 You can find your previous dot files in `~/dotfiles_old/<timestamp>`
 1. You'll want to `unlink` the relevant "dotfile(s)" _or delete them_
